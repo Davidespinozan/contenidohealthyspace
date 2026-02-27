@@ -35,8 +35,8 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 .db2:hover{background:rgba(46,74,66,.05)}
 
 /* ══ SLIDE ENGINE ══ */
-.si{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:'Montserrat',sans-serif}
-.si-sq{width:2160px;height:2160px;position:relative;overflow:hidden;font-family:'Montserrat',sans-serif}
+.si{width:1080px;height:1350px;transform:scale(0.3704);transform-origin:top left;position:relative;overflow:hidden;font-family:'Montserrat',sans-serif}
+.si-sq{width:2160px;height:2160px;transform:scale(0.1852);transform-origin:top left;position:relative;overflow:hidden;font-family:'Montserrat',sans-serif}
 
 /* BGs */
 .bg-c{position:absolute;inset:0;background:#F6F2EA}
@@ -812,7 +812,7 @@ async function dl(id,name){
   inner.querySelectorAll('[contenteditable]').forEach(e=>e.blur());
   
   const clone=inner.cloneNode(true);
-  clone.style.zoom='1';
+  clone.style.zoom='';
   clone.style.transform='none';
   clone.style.width='1080px';
   clone.style.height='1350px';
@@ -820,6 +820,7 @@ async function dl(id,name){
   clone.style.left='-9999px';
   clone.style.top='0';
   clone.style.zIndex='-1';
+  clone.style.overflow='hidden';
   document.body.appendChild(clone);
   
   await new Promise(r=>setTimeout(r,600));
@@ -839,7 +840,7 @@ async function dlSq(id,name){
   inner.querySelectorAll('[contenteditable]').forEach(e=>e.blur());
   
   const clone=inner.cloneNode(true);
-  clone.style.zoom='1';
+  clone.style.zoom='';
   clone.style.transform='none';
   clone.style.width='2160px';
   clone.style.height='2160px';
@@ -847,6 +848,7 @@ async function dlSq(id,name){
   clone.style.left='-9999px';
   clone.style.top='0';
   clone.style.zIndex='-1';
+  clone.style.overflow='hidden';
   document.body.appendChild(clone);
   
   await new Promise(r=>setTimeout(r,600));
@@ -864,22 +866,39 @@ function swI(ib){
 }
 function trS(id){const s=document.getElementById(id).querySelector('.ib.sw');if(s)swI(s);}
 
-// Mobile + Desktop responsive scaling
+// Mobile responsive scaling - only touches mobile
 function scaleSl(){
-  var w = window.innerWidth <= 440 ? window.innerWidth - 20 : 400;
-  var z1 = w / 1080;
-  var z2 = w / 2160;
-  var els = document.querySelectorAll('.si');
-  for(var i=0;i<els.length;i++){els[i].style.zoom=z1;}
-  var sqs = document.querySelectorAll('.si-sq');
-  for(var i=0;i<sqs.length;i++){sqs[i].style.zoom=z2;}
-  var sls = document.querySelectorAll('.sl');
+  if(window.innerWidth > 440){
+    // Desktop: restore defaults
+    var els=document.querySelectorAll('.si');
+    for(var i=0;i<els.length;i++){els[i].style.transform='scale(0.3704)';els[i].style.zoom='';}
+    var sqs=document.querySelectorAll('.si-sq');
+    for(var i=0;i<sqs.length;i++){sqs[i].style.transform='scale(0.1852)';sqs[i].style.zoom='';}
+    var sls=document.querySelectorAll('.sl');
+    for(var i=0;i<sls.length;i++){sls[i].style.width='400px';sls[i].style.height='500px';}
+    var ssq=document.querySelectorAll('.sl-sq');
+    for(var i=0;i<ssq.length;i++){ssq[i].style.width='400px';ssq[i].style.height='400px';}
+    var sws=document.querySelectorAll('.sw');
+    for(var i=0;i<sws.length;i++){sws[i].style.flex='0 0 400px';}
+    var brs=document.querySelectorAll('.brow');
+    for(var i=0;i<brs.length;i++){brs[i].style.width='400px';}
+    return;
+  }
+  // Mobile
+  var w=window.innerWidth-20;
+  var s1=w/1080;
+  var s2=w/2160;
+  var els=document.querySelectorAll('.si');
+  for(var i=0;i<els.length;i++){els[i].style.transform='scale('+s1+')';els[i].style.transformOrigin='top left';els[i].style.zoom='';}
+  var sqs=document.querySelectorAll('.si-sq');
+  for(var i=0;i<sqs.length;i++){sqs[i].style.transform='scale('+s2+')';sqs[i].style.transformOrigin='top left';sqs[i].style.zoom='';}
+  var sls=document.querySelectorAll('.sl');
   for(var i=0;i<sls.length;i++){sls[i].style.width=w+'px';sls[i].style.height=Math.round(w*1.25)+'px';}
-  var ssq = document.querySelectorAll('.sl-sq');
+  var ssq=document.querySelectorAll('.sl-sq');
   for(var i=0;i<ssq.length;i++){ssq[i].style.width=w+'px';ssq[i].style.height=w+'px';}
-  var sws = document.querySelectorAll('.sw');
+  var sws=document.querySelectorAll('.sw');
   for(var i=0;i<sws.length;i++){sws[i].style.flex='0 0 '+w+'px';}
-  var brs = document.querySelectorAll('.brow');
+  var brs=document.querySelectorAll('.brow');
   for(var i=0;i<brs.length;i++){brs[i].style.width=w+'px';}
 }
 scaleSl();
