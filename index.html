@@ -806,61 +806,56 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 
 <script>
 async function dl(id,name){
-  const el=document.getElementById(id),inner=el.querySelector('.si'),sw=el.closest('.sw'),btns=sw.querySelectorAll('.db');
+  const el=document.getElementById(id);
+  const inner=el.querySelector('.si');
+  const sw=el.closest('.sw');
+  const btns=sw.querySelectorAll('.db');
   btns.forEach(b=>{b.dataset.o=b.textContent;b.textContent='⏳';b.disabled=true});
   inner.querySelectorAll('[contenteditable]').forEach(e=>e.blur());
-  // Save current styles
-  const saved={t:inner.style.transform,w:el.style.width,h:el.style.height,r:el.style.borderRadius,o:el.style.overflow};
-  // Force full size for capture
-  inner.style.transform='none';
-  inner.style.width='1080px';
-  inner.style.height='1350px';
-  el.style.width='1080px';
-  el.style.height='1350px';
-  el.style.overflow='hidden';
-  el.style.borderRadius='0';
-  // Wait for images to settle
-  await new Promise(r=>setTimeout(r,200));
+  
+  // Clone the slide off-screen at full resolution
+  const clone=inner.cloneNode(true);
+  clone.style.transform='none';
+  clone.style.width='1080px';
+  clone.style.height='1350px';
+  clone.style.position='fixed';
+  clone.style.left='-9999px';
+  clone.style.top='0';
+  clone.style.zIndex='-1';
+  document.body.appendChild(clone);
+  
+  await new Promise(r=>setTimeout(r,500));
   try{
-    const c=await html2canvas(inner,{width:1080,height:1350,scale:1,useCORS:true,allowTaint:true,backgroundColor:null,logging:false});
+    const c=await html2canvas(clone,{width:1080,height:1350,scale:1,useCORS:true,allowTaint:true,backgroundColor:null,logging:false});
     const a=document.createElement('a');a.download=name+'.png';a.href=c.toDataURL('image/png');a.click();
-  }catch(e){console.error(e);alert('Error. Usa screenshot manual.');}
-  // Restore
-  inner.style.transform=saved.t;
-  inner.style.width='';
-  inner.style.height='';
-  el.style.width=saved.w;
-  el.style.height=saved.h;
-  el.style.overflow='';
-  el.style.borderRadius=saved.r;
-  scaleSl();
+  }catch(e){console.error(e);alert('Error al generar. Intenta desde computadora.');}
+  document.body.removeChild(clone);
   btns.forEach(b=>{b.textContent=b.dataset.o;b.disabled=false});
 }
 async function dlSq(id,name){
-  const el=document.getElementById(id),inner=el.querySelector('.si-sq'),sw=el.closest('.sw'),btns=sw.querySelectorAll('.db');
+  const el=document.getElementById(id);
+  const inner=el.querySelector('.si-sq');
+  const sw=el.closest('.sw');
+  const btns=sw.querySelectorAll('.db');
   btns.forEach(b=>{b.dataset.o=b.textContent;b.textContent='⏳';b.disabled=true});
   inner.querySelectorAll('[contenteditable]').forEach(e=>e.blur());
-  const saved={t:inner.style.transform,w:el.style.width,h:el.style.height,r:el.style.borderRadius};
-  inner.style.transform='none';
-  inner.style.width='2160px';
-  inner.style.height='2160px';
-  el.style.width='2160px';
-  el.style.height='2160px';
-  el.style.overflow='hidden';
-  el.style.borderRadius='0';
-  await new Promise(r=>setTimeout(r,200));
+  
+  const clone=inner.cloneNode(true);
+  clone.style.transform='none';
+  clone.style.width='2160px';
+  clone.style.height='2160px';
+  clone.style.position='fixed';
+  clone.style.left='-9999px';
+  clone.style.top='0';
+  clone.style.zIndex='-1';
+  document.body.appendChild(clone);
+  
+  await new Promise(r=>setTimeout(r,500));
   try{
-    const c=await html2canvas(inner,{width:2160,height:2160,scale:1,useCORS:true,allowTaint:true,backgroundColor:null,logging:false});
+    const c=await html2canvas(clone,{width:2160,height:2160,scale:1,useCORS:true,allowTaint:true,backgroundColor:null,logging:false});
     const a=document.createElement('a');a.download=name+'.png';a.href=c.toDataURL('image/png');a.click();
-  }catch(e){console.error(e);alert('Error. Usa screenshot manual.');}
-  inner.style.transform=saved.t;
-  inner.style.width='';
-  inner.style.height='';
-  el.style.width=saved.w;
-  el.style.height=saved.h;
-  el.style.overflow='';
-  el.style.borderRadius=saved.r;
-  scaleSl();
+  }catch(e){console.error(e);alert('Error al generar. Intenta desde computadora.');}
+  document.body.removeChild(clone);
   btns.forEach(b=>{b.textContent=b.dataset.o;b.disabled=false});
 }
 function swI(ib){
