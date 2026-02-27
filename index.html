@@ -284,7 +284,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 <div class="desc">Frase filosófica + imagen lifestyle.</div>
 <div class="cap"><b>Caption:</b> "No vendemos dietas. No vendemos cuerpos. Construimos un estilo de vida que dura. 💛"</div>
 <div class="car"><div class="sw">
-<div class="sl" id="p2"><div class="si ov8">
+<div class="sl" id="p2"><div class="si ov1">
   <div class="ib sw" onclick="swI(this)"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771973920/imagen2_ne3j1j.webp" crossorigin="anonymous"></div>
   <div class="tx"></div>
   <div class="sc sc-e">
@@ -832,7 +832,7 @@ async function dl(id,name){
   
   await new Promise(r=>setTimeout(r,600));
   try{
-    const c=await html2canvas(clone,{width:1080,height:1350,scale:1,useCORS:true,allowTaint:true,backgroundColor:null,logging:false});
+    const c=await html2canvas(clone,{width:1080,height:1350,scale:2,useCORS:true,allowTaint:true,backgroundColor:null,logging:false});
     const a=document.createElement('a');a.download=name+'.png';a.href=c.toDataURL('image/png');a.click();
   }catch(e){console.error(e);alert('Error al generar.');}
   document.body.removeChild(clone);
@@ -860,7 +860,7 @@ async function dlSq(id,name){
   
   await new Promise(r=>setTimeout(r,600));
   try{
-    const c=await html2canvas(clone,{width:2160,height:2160,scale:1,useCORS:true,allowTaint:true,backgroundColor:null,logging:false});
+    const c=await html2canvas(clone,{width:2160,height:2160,scale:2,useCORS:true,allowTaint:true,backgroundColor:null,logging:false});
     const a=document.createElement('a');a.download=name+'.png';a.href=c.toDataURL('image/png');a.click();
   }catch(e){console.error(e);alert('Error al generar.');}
   document.body.removeChild(clone);
