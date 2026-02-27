@@ -24,20 +24,19 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 
 .car{display:flex;gap:14px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .car::-webkit-scrollbar{height:3px}.car::-webkit-scrollbar-track{background:#e8e4dc}.car::-webkit-scrollbar-thumb{background:#ccc;border-radius:4px}
-.sw{flex:0 0 auto;scroll-snap-align:start;display:flex;flex-direction:column;gap:7px}
+.sw{flex:0 0 400px;scroll-snap-align:start;display:flex;flex-direction:column;gap:7px}
 .sl{width:400px;height:500px;border-radius:10px;overflow:hidden;position:relative;border:1px solid rgba(46,74,66,.08);box-shadow:0 4px 20px rgba(46,74,66,.06)}
-/* Profile pic is square */
 .sl-sq{width:400px;height:400px}
 
-.brow{display:flex;gap:5px}
+.brow{display:flex;gap:5px;width:400px}
 .db{flex:1;background:#2E4A42;border:none;border-radius:6px;color:#F6F2EA;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:.06em;padding:8px 10px;cursor:pointer;transition:all .15s;text-align:center}
 .db:hover{background:#3d6359}
 .db2{background:transparent;border:1px solid rgba(46,74,66,.18);color:#2E4A42}
 .db2:hover{background:rgba(46,74,66,.05)}
 
 /* ══ SLIDE ENGINE ══ */
-.si{width:1080px;height:1350px;transform:scale(0.3704);transform-origin:top left;position:relative;overflow:hidden;font-family:'Montserrat',sans-serif}
-.si-sq{width:2160px;height:2160px;transform:scale(0.1852);transform-origin:top left;position:relative;overflow:hidden;font-family:'Montserrat',sans-serif}
+.si{width:1080px;height:1350px;zoom:0.3704;position:relative;overflow:hidden;font-family:'Montserrat',sans-serif}
+.si-sq{width:2160px;height:2160px;zoom:0.1852;position:relative;overflow:hidden;font-family:'Montserrat',sans-serif}
 
 /* BGs */
 .bg-c{position:absolute;inset:0;background:#F6F2EA}
@@ -201,7 +200,6 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
   body{padding:20px 10px}
   .phd h1{font-size:9px}
   .car{gap:10px;padding-bottom:10px}
-  .brow{width:100%}
   .sec{margin-bottom:44px}
   .cap,.desc{max-width:100%}
 }
@@ -813,8 +811,8 @@ async function dl(id,name){
   btns.forEach(b=>{b.dataset.o=b.textContent;b.textContent='⏳';b.disabled=true});
   inner.querySelectorAll('[contenteditable]').forEach(e=>e.blur());
   
-  // Clone the slide off-screen at full resolution
   const clone=inner.cloneNode(true);
+  clone.style.zoom='1';
   clone.style.transform='none';
   clone.style.width='1080px';
   clone.style.height='1350px';
@@ -824,11 +822,11 @@ async function dl(id,name){
   clone.style.zIndex='-1';
   document.body.appendChild(clone);
   
-  await new Promise(r=>setTimeout(r,500));
+  await new Promise(r=>setTimeout(r,600));
   try{
     const c=await html2canvas(clone,{width:1080,height:1350,scale:1,useCORS:true,allowTaint:true,backgroundColor:null,logging:false});
     const a=document.createElement('a');a.download=name+'.png';a.href=c.toDataURL('image/png');a.click();
-  }catch(e){console.error(e);alert('Error al generar. Intenta desde computadora.');}
+  }catch(e){console.error(e);alert('Error al generar.');}
   document.body.removeChild(clone);
   btns.forEach(b=>{b.textContent=b.dataset.o;b.disabled=false});
 }
@@ -841,6 +839,7 @@ async function dlSq(id,name){
   inner.querySelectorAll('[contenteditable]').forEach(e=>e.blur());
   
   const clone=inner.cloneNode(true);
+  clone.style.zoom='1';
   clone.style.transform='none';
   clone.style.width='2160px';
   clone.style.height='2160px';
@@ -850,11 +849,11 @@ async function dlSq(id,name){
   clone.style.zIndex='-1';
   document.body.appendChild(clone);
   
-  await new Promise(r=>setTimeout(r,500));
+  await new Promise(r=>setTimeout(r,600));
   try{
     const c=await html2canvas(clone,{width:2160,height:2160,scale:1,useCORS:true,allowTaint:true,backgroundColor:null,logging:false});
     const a=document.createElement('a');a.download=name+'.png';a.href=c.toDataURL('image/png');a.click();
-  }catch(e){console.error(e);alert('Error al generar. Intenta desde computadora.');}
+  }catch(e){console.error(e);alert('Error al generar.');}
   document.body.removeChild(clone);
   btns.forEach(b=>{b.textContent=b.dataset.o;b.disabled=false});
 }
@@ -865,39 +864,26 @@ function swI(ib){
 }
 function trS(id){const s=document.getElementById(id).querySelector('.ib.sw');if(s)swI(s);}
 
-// Mobile responsive scaling
+// Mobile + Desktop responsive scaling
 function scaleSl(){
-  const isMobile = window.innerWidth <= 440;
-  const w = isMobile ? window.innerWidth - 20 : 400;
-  const scale1080 = w / 1080;
-  const scale2160 = w / 2160;
-  
-  document.querySelectorAll('.si').forEach(s => {
-    s.style.transform = 'scale(' + scale1080 + ')';
-  });
-  document.querySelectorAll('.si-sq').forEach(s => {
-    s.style.transform = 'scale(' + scale2160 + ')';
-  });
-  document.querySelectorAll('.sl').forEach(s => {
-    s.style.width = w + 'px';
-    s.style.height = Math.round(w * 1.25) + 'px';
-  });
-  document.querySelectorAll('.sl-sq').forEach(s => {
-    s.style.width = w + 'px';
-    s.style.height = w + 'px';
-  });
-  if(isMobile){
-    document.querySelectorAll('.sw').forEach(s => {
-      s.style.width = w + 'px';
-      s.style.flex = '0 0 ' + w + 'px';
-    });
-    document.querySelectorAll('.brow').forEach(s => {
-      s.style.width = w + 'px';
-    });
-  }
+  var w = window.innerWidth <= 440 ? window.innerWidth - 20 : 400;
+  var z1 = w / 1080;
+  var z2 = w / 2160;
+  var els = document.querySelectorAll('.si');
+  for(var i=0;i<els.length;i++){els[i].style.zoom=z1;}
+  var sqs = document.querySelectorAll('.si-sq');
+  for(var i=0;i<sqs.length;i++){sqs[i].style.zoom=z2;}
+  var sls = document.querySelectorAll('.sl');
+  for(var i=0;i<sls.length;i++){sls[i].style.width=w+'px';sls[i].style.height=Math.round(w*1.25)+'px';}
+  var ssq = document.querySelectorAll('.sl-sq');
+  for(var i=0;i<ssq.length;i++){ssq[i].style.width=w+'px';ssq[i].style.height=w+'px';}
+  var sws = document.querySelectorAll('.sw');
+  for(var i=0;i<sws.length;i++){sws[i].style.flex='0 0 '+w+'px';}
+  var brs = document.querySelectorAll('.brow');
+  for(var i=0;i<brs.length;i++){brs[i].style.width=w+'px';}
 }
 scaleSl();
-window.addEventListener('resize', scaleSl);
+window.addEventListener('resize',scaleSl);
 </script>
 </body>
 </html>
