@@ -52,6 +52,13 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 .ov2 .ib::after{background:linear-gradient(180deg,rgba(30,51,48,.15) 0%,rgba(30,51,48,.65) 45%,rgba(30,51,48,.94) 100%)}
 .ov3 .ib::after{background:radial-gradient(ellipse at center,rgba(30,51,48,.45) 0%,rgba(30,51,48,.85) 100%)}
 .ov4 .ib::after{background:linear-gradient(0deg,rgba(246,242,234,0) 0%,rgba(246,242,234,.85) 50%,#F6F2EA 100%)}
+/* New varied overlays */
+.ov5 .ib::after{background:linear-gradient(180deg,rgba(246,242,234,.7) 0%,rgba(246,242,234,.15) 35%,rgba(246,242,234,.0) 50%,rgba(246,242,234,.85) 80%,#F6F2EA 100%)}
+.ov6 .ib::after{background:linear-gradient(160deg,rgba(30,51,48,.92) 0%,rgba(30,51,48,.3) 50%,rgba(30,51,48,.88) 100%)}
+.ov7 .ib::after{background:linear-gradient(180deg,rgba(30,51,48,.85) 0%,rgba(30,51,48,.2) 40%,rgba(30,51,48,.75) 100%)}
+.ov8 .ib::after{background:linear-gradient(180deg,#F6F2EA 0%,rgba(246,242,234,.6) 30%,rgba(246,242,234,.0) 55%,rgba(246,242,234,.0) 100%)}
+.ov9 .ib::after{background:linear-gradient(135deg,rgba(246,242,234,.95) 0%,rgba(246,242,234,.4) 50%,rgba(246,242,234,.85) 100%)}
+.ov10 .ib::after{background:linear-gradient(180deg,rgba(30,51,48,.0) 0%,rgba(30,51,48,.0) 40%,rgba(30,51,48,.7) 65%,rgba(30,51,48,.95) 100%)}
 
 /* Texture */
 .tx{position:absolute;inset:0;opacity:.028;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:150px;z-index:2;pointer-events:none}
@@ -78,7 +85,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 /* Light logo (white img, gold CLUB) — for dark backgrounds */
 .L-wt img{filter:none}.L-wt .Lsub{color:#BFA065}
 /* Dark logo (invert white to dark, terra CLUB) — for light backgrounds */
-.L-dk img{filter:brightness(0) saturate(100%) invert(15%) sepia(20%) saturate(700%) hue-rotate(130deg)}.L-dk .Lsub{color:#A8864E}
+.L-dk img{filter:none}.L-dk .Lsub{color:#A8864E}
 
 /* Tag */
 .tg{display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#BFA065;margin-bottom:28px}
@@ -237,7 +244,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
   <div class="bg-c"></div>
   <div class="tx"></div>
   <div style="position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:200px;">
-    <div class="L L-dk" style="margin-bottom:16px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous" style="height:280px;"><span class="Lsub" style="font-size:56px;letter-spacing:.32em;margin-top:-8px;">CLUB</span></div>
+    <div class="L L-dk" style="margin-bottom:16px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/e_colorize:100,co_rgb:1e3330/v1771971266/logo_ohaica.png" crossorigin="anonymous" style="height:280px;"><span class="Lsub" style="font-size:56px;letter-spacing:.32em;margin-top:-8px;">CLUB</span></div>
     <div style="position:absolute;inset:140px;border-radius:50%;border:3px dashed rgba(46,74,66,.06);pointer-events:none;z-index:20"></div>
   </div>
 </div></div>
@@ -254,11 +261,11 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 <div class="desc">Manifiesto visual. Primera impresión de la marca.</div>
 <div class="cap"><b>Caption:</b> "Un espacio para quienes eligen vivir bien. No perfecto. Bien. 🌿"</div>
 <div class="car"><div class="sw">
-<div class="sl" id="p1"><div class="si ov1">
+<div class="sl" id="p1"><div class="si ov5">
   <div class="ib sw" onclick="swI(this)"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1772050428/hero_pghcvy.webp" crossorigin="anonymous"></div>
   <div class="tx"></div>
   <div class="sc sc-e">
-    <div class="L L-s L-dk" style="position:absolute;top:72px;left:80px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
+    <div class="L L-s L-dk" style="position:absolute;top:72px;left:80px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/e_colorize:100,co_rgb:1e3330/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
     <h2 class="h h-84" contenteditable="true" style="margin-bottom:20px;">Vivir bien es una <span class="hli">decisión diaria.</span></h2>
     <div class="dv"></div>
     <p class="p p-lg" contenteditable="true">Nutrición · Entrenamiento · Mentalidad<br>Un solo lugar. Un sistema real.</p>
@@ -277,11 +284,11 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 <div class="desc">Frase filosófica + imagen lifestyle.</div>
 <div class="cap"><b>Caption:</b> "No vendemos dietas. No vendemos cuerpos. Construimos un estilo de vida que dura. 💛"</div>
 <div class="car"><div class="sw">
-<div class="sl" id="p2"><div class="si ov1">
+<div class="sl" id="p2"><div class="si ov8">
   <div class="ib sw" onclick="swI(this)"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771973920/imagen2_ne3j1j.webp" crossorigin="anonymous"></div>
   <div class="tx"></div>
   <div class="sc sc-e">
-    <div class="L L-s L-dk" style="position:absolute;top:72px;left:80px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
+    <div class="L L-s L-dk" style="position:absolute;top:72px;left:80px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/e_colorize:100,co_rgb:1e3330/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
     <h2 class="h h-72" contenteditable="true" style="margin-bottom:16px;">No se trata de ser perfecto.<br>Se trata de ser <span class="hli">constante.</span></h2>
     <p class="p" contenteditable="true">El cambio real no viene de restricciones. Viene de sistemas.</p>
     <div class="ft ft-b" style="margin-top:28px;"><span contenteditable="true">@healthyspaceclub</span></div>
@@ -320,7 +327,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
   <div class="bg-c"></div><div class="tx"></div>
   <div class="gl-v" style="left:80px;"></div>
   <div class="sc sc-f">
-    <div class="L L-s L-dk" style="margin-bottom:40px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
+    <div class="L L-s L-dk" style="margin-bottom:40px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/e_colorize:100,co_rgb:1e3330/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
     <p class="q" contenteditable="true">Creemos que vivir bien no debería ser complicado, caro ni aburrido.</p>
     <div class="ln"></div>
     <p class="p p-lg" contenteditable="true" style="margin-bottom:28px;">Por eso creamos un sistema que combina todo lo que necesitas:</p>
@@ -362,7 +369,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
   <div class="bg-c"></div><div class="tx"></div>
   <div class="gl-h" style="top:46%;"></div>
   <div class="sc sc-c">
-    <div class="L L-s Lc L-dk" style="position:absolute;top:72px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
+    <div class="L L-s Lc L-dk" style="position:absolute;top:72px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/e_colorize:100,co_rgb:1e3330/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
     <h2 class="h h-96" contenteditable="true" style="max-width:920px;">Tu cuerpo no necesita castigo.<br><br>Necesita <span class="hli">cuidado.</span></h2>
     <div class="ft" style="justify-content:center;"><span contenteditable="true">@healthyspaceclub</span></div>
   </div>
@@ -380,7 +387,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 <div class="sw"><div class="sl" id="p5a"><div class="si">
   <div class="bg-c"></div><div class="tx"></div>
   <div class="sc sc-f">
-    <div class="L L-s L-dk" style="margin-bottom:36px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
+    <div class="L L-s L-dk" style="margin-bottom:36px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/e_colorize:100,co_rgb:1e3330/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
     <div class="tg tg-dk"><span class="dot" style="background:#2E4A42"></span> <span contenteditable="true">Lo de siempre</span></div>
     <ul class="xl">
       <li contenteditable="true">Dietas de 800 calorías que no duran</li>
@@ -398,7 +405,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 <div class="sw"><div class="sl" id="p5b"><div class="si">
   <div class="bg-c"></div><div class="tx"></div>
   <div class="sc sc-f">
-    <div class="L L-s L-dk" style="margin-bottom:36px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
+    <div class="L L-s L-dk" style="margin-bottom:36px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/e_colorize:100,co_rgb:1e3330/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
     <div class="tg"><span class="dot"></span> <span contenteditable="true">Healthy Space Club</span></div>
     <ul class="cl">
       <li contenteditable="true">Plan de nutrición real y flexible</li>
@@ -423,11 +430,11 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 <div class="desc">Pilar Nutrición. Meal prep + frase.</div>
 <div class="cap"><b>Caption:</b> "Comer bien no significa comer aburrido. 28 días, 4 cocinas del mundo, 0 restricciones extremas. 🌍🥗"</div>
 <div class="car"><div class="sw">
-<div class="sl" id="p6"><div class="si ov1">
+<div class="sl" id="p6"><div class="si ov9">
   <div class="ib sw" onclick="swI(this)"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1772042278/mealprep_wfczav.webp" crossorigin="anonymous"></div>
   <div class="tx"></div>
   <div class="sc sc-e">
-    <div class="L L-s L-dk" style="position:absolute;top:72px;left:80px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
+    <div class="L L-s L-dk" style="position:absolute;top:72px;left:80px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/e_colorize:100,co_rgb:1e3330/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
     <div class="tg tg-dk"><span class="dot" style="background:#2E4A42"></span> <span contenteditable="true">Nutrición</span></div>
     <h2 class="h h-72" contenteditable="true">Comer bien es un <span class="hli">placer,</span> no un sacrificio.</h2>
     <p class="p" contenteditable="true" style="margin-top:14px;">28 días · 4 cocinas del mundo · Recetas en video</p>
@@ -446,15 +453,15 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 <div class="desc">Pilar Entrenamiento. Gym + frase.</div>
 <div class="cap"><b>Caption:</b> "No se trata de entrenar más duro. Se trata de entrenar con propósito. 💪"</div>
 <div class="car"><div class="sw">
-<div class="sl" id="p7"><div class="si ov1">
+<div class="sl" id="p7"><div class="si ov10">
   <div class="ib sw" onclick="swI(this)"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1772042621/workout_s1mccg.webp" crossorigin="anonymous"></div>
   <div class="tx"></div>
   <div class="sc sc-e">
-    <div class="L L-s L-dk" style="position:absolute;top:72px;left:80px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
-    <div class="tg tg-dk"><span class="dot" style="background:#2E4A42"></span> <span contenteditable="true">Entrenamiento</span></div>
-    <h2 class="h h-72" contenteditable="true">Entrena con <span class="hli">propósito,</span> no con culpa.</h2>
-    <p class="p" contenteditable="true" style="margin-top:14px;">Videos paso a paso · Casa o gimnasio</p>
-    <div class="ft ft-b" style="margin-top:24px;"><span contenteditable="true">@healthyspaceclub</span></div>
+    <div class="L L-s L-wt" style="position:absolute;top:72px;left:80px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
+    <div class="tg"><span class="dot"></span> <span contenteditable="true">Entrenamiento</span></div>
+    <h2 class="h h-72 h-w" contenteditable="true">Entrena con <span class="hli">propósito,</span> no con culpa.</h2>
+    <p class="p p-w" contenteditable="true" style="margin-top:14px;">Videos paso a paso · Casa o gimnasio</p>
+    <div class="ft ft-bw ft-w" style="margin-top:24px;"><span contenteditable="true">@healthyspaceclub</span></div>
   </div>
 </div></div>
 <div class="brow">
@@ -473,7 +480,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
   <div class="bg-c"></div><div class="tx"></div>
   <div class="gl-h" style="top:48%;"></div>
   <div class="sc sc-c">
-    <div class="L L-s Lc L-dk" style="position:absolute;top:72px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
+    <div class="L L-s Lc L-dk" style="position:absolute;top:72px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/e_colorize:100,co_rgb:1e3330/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
     <div class="tg"><span class="dot"></span> <span contenteditable="true">Mentalidad</span></div>
     <h2 class="h h-84" contenteditable="true">El cambio real empieza por <span class="hli">dentro.</span></h2>
     <div class="dv dv-c"></div>
@@ -494,7 +501,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
   <div class="ib sw" onclick="swI(this)"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771973926/imagen10_ti14gp.webp" crossorigin="anonymous"></div>
   <div class="tx"></div>
   <div class="sc sc-e">
-    <div class="L L-s L-dk" style="position:absolute;top:72px;left:80px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
+    <div class="L L-s L-dk" style="position:absolute;top:72px;left:80px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/e_colorize:100,co_rgb:1e3330/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
     <div class="tg tg-dk"><span class="dot" style="background:#2E4A42"></span> <span contenteditable="true">Comunidad</span></div>
     <h2 class="h h-72" contenteditable="true">No es un programa.<br>Es un <span class="hli">movimiento.</span></h2>
     <p class="p" contenteditable="true" style="margin-top:12px;">Un espacio donde cuidarte es lo normal.</p>
@@ -517,7 +524,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 <div class="sw"><div class="sl" id="p10a"><div class="si">
   <div class="bg-c"></div><div class="tx"></div>
   <div class="sc sc-c">
-    <div class="L L-s Lc L-dk" style="position:absolute;top:72px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
+    <div class="L L-s Lc L-dk" style="position:absolute;top:72px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/e_colorize:100,co_rgb:1e3330/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
     <div class="tg"><span class="dot"></span> <span contenteditable="true">Educativo</span></div>
     <h2 class="h h-72" contenteditable="true">5 señales de que tu cuerpo te pide un <span class="hli">cambio.</span></h2>
     <p class="p" contenteditable="true" style="margin-top:20px;">Desliza →</p>
@@ -530,7 +537,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
   <div class="bg-c"></div><div class="tx"></div>
   <div class="gl-v" style="left:80px;"></div>
   <div class="sc sc-f">
-    <div class="L L-s L-dk" style="margin-bottom:40px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
+    <div class="L L-s L-dk" style="margin-bottom:40px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/e_colorize:100,co_rgb:1e3330/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
     <div style="display:flex;flex-direction:column;gap:30px;">
       <div style="display:flex;gap:20px;align-items:flex-start;">
         <div class="nc">1</div>
@@ -601,7 +608,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
   <div class="ib sw" onclick="swI(this)"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1772045449/hpm_johgyu.webp" crossorigin="anonymous"></div>
   <div class="tx"></div>
   <div class="sc sc-e">
-    <div class="L L-m Lc L-dk" style="position:absolute;top:72px;left:50%;transform:translateX(-50%);"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
+    <div class="L L-m Lc L-dk" style="position:absolute;top:72px;left:50%;transform:translateX(-50%);"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/e_colorize:100,co_rgb:1e3330/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
     <h2 class="h h-72" contenteditable="true">Tu espacio para vivir <span class="hli">bien</span> empieza <span class="hli">aquí.</span></h2>
     <div class="dv"></div>
     <p class="p" contenteditable="true">Nutrición · Entrenamiento · Mentalidad</p>
@@ -679,7 +686,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 <div class="desc">Pilar Nutrición con features detallados.</div>
 <div class="cap"><b>Caption:</b> "Tu plan de alimentación ya viene listo. Se actualiza. Tiene video para cada receta. Sin contar calorías a mano."</div>
 <div class="car"><div class="sw">
-<div class="sl" id="p15"><div class="si ov-cream">
+<div class="sl" id="p15"><div class="si ov5">
   <div class="ib sw" onclick="swI(this)"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1772042278/mealprep_wfczav.webp" crossorigin="anonymous"></div>
   <div class="tx"></div><div class="atop"></div>
   <div class="sc" style="justify-content:space-between;">
@@ -714,7 +721,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 <div class="desc">Pilar Entrenamiento con features detallados.</div>
 <div class="cap"><b>Caption:</b> "No necesitas un PT de $2,000 al mes. Necesitas un sistema que te guíe paso a paso."</div>
 <div class="car"><div class="sw">
-<div class="sl" id="p16"><div class="si ov-cream">
+<div class="sl" id="p16"><div class="si ov8">
   <div class="ib sw" onclick="swI(this)"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1772042621/workout_s1mccg.webp" crossorigin="anonymous"></div>
   <div class="tx"></div><div class="atop"></div>
   <div class="sc" style="justify-content:space-between;">
