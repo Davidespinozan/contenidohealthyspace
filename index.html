@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthy Space Club — 9 Posts IG</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#1e3330;
+  --moss:  #2E4A42;
+  --sage:  #3d6359;
+  --amber: #BFA065;
+  --terra: #A8864E;
+  --cream: #F6F2EA;
+  --warm:  #F0EBE0;
+  --sky:   #EDE9E0;
+  --txt:   #1e3330;
+  --txt2:  rgba(30,51,48,.58);
+  --bdr:   rgba(46,74,66,.09);
+}
+body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--txt);padding:52px 28px 80px}
+
+/* PAGE HEADER */
+.ph{text-align:center;margin-bottom:64px}
+.ph-badge{display:inline-flex;align-items:center;gap:8px;background:var(--forest);color:var(--amber);font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:10px 24px;border-radius:50px;margin-bottom:22px}
+.ph-badge::before{content:'';width:6px;height:6px;background:var(--amber);border-radius:50%}
+.ph-title{font-size:48px;font-weight:800;color:var(--forest);line-height:1.05;text-transform:uppercase;letter-spacing:-.03em}
+.ph-title em{font-style:italic;color:var(--amber)}
+.ph-line{width:48px;height:3px;background:var(--amber);margin:18px auto;border-radius:2px}
+.ph-sub{font-size:10px;color:var(--txt2);letter-spacing:3px;text-transform:uppercase;font-weight:600}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1060px;margin:0 auto}
+
+/* CARD */
+.card{display:flex;flex-direction:column;gap:10px}
+.card-meta{display:flex;justify-content:space-between;align-items:center;padding:0 2px}
+.card-n{font-size:9px;color:var(--txt2);letter-spacing:3px;font-weight:700;text-transform:uppercase}
+.badge{font-size:8px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:3px 10px;border-radius:50px}
+.b-p{background:rgba(191,160,101,.15);color:var(--terra);border:1px solid rgba(191,160,101,.25)}
+.b-r{background:rgba(46,74,66,.1);color:var(--moss);border:1px solid rgba(46,74,66,.15)}
+.b-c{background:var(--warm);color:var(--txt2);border:1px solid var(--bdr)}
+
+/* CANVAS */
+.canvas{width:100%;aspect-ratio:1/1;position:relative;overflow:hidden;border-radius:4px;box-shadow:0 20px 60px rgba(46,74,66,.18),0 4px 16px rgba(46,74,66,.08);cursor:pointer}
+.pbg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 7s ease}
+.canvas:hover .pbg{transform:scale(1.04)}
+
+/* Overlays */
+.ov-top   {position:absolute;inset:0;background:linear-gradient(to bottom,rgba(30,51,48,.88) 0%,rgba(30,51,48,.05) 55%,rgba(30,51,48,.78) 100%)}
+.ov-bot   {position:absolute;inset:0;background:linear-gradient(to top,rgba(30,51,48,.97) 38%,rgba(30,51,48,.15) 100%)}
+.ov-moss  {position:absolute;inset:0;background:linear-gradient(145deg,rgba(30,51,48,.97) 0%,rgba(46,74,66,.95) 100%)}
+.ov-forest{position:absolute;inset:0;background:rgba(30,51,48,.75)}
+.ov-cream {position:absolute;inset:0;background:rgba(246,242,234,.96)}
+.ov-solid {position:absolute;inset:0;background:var(--forest)}
+.ov-grad  {position:absolute;inset:0;background:linear-gradient(145deg,var(--moss) 0%,var(--forest) 100%)}
+
+/* Accents */
+.at  {position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--moss),var(--amber))}
+.at-a{position:absolute;top:0;left:0;right:0;height:3px;background:var(--amber)}
+
+/* Glows */
+.gl-tl{position:absolute;top:-60px;left:-60px;width:220px;height:220px;background:radial-gradient(circle,rgba(191,160,101,.1) 0%,transparent 70%);pointer-events:none}
+.gl-br{position:absolute;bottom:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle,rgba(46,74,66,.12) 0%,transparent 70%);pointer-events:none}
+
+/* Big bg italic number */
+.bgn{position:absolute;font-size:200px;font-weight:900;font-style:italic;color:rgba(191,160,101,.04);line-height:1;right:-10px;bottom:-20px;pointer-events:none}
+
+/* Watermark */
+.bwm {position:absolute;bottom:13px;left:0;right:0;text-align:center;font-size:7px;letter-spacing:4px;color:rgba(255,255,255,.2);text-transform:uppercase;font-weight:700}
+.bwm-d{position:absolute;bottom:13px;left:0;right:0;text-align:center;font-size:7px;letter-spacing:4px;color:rgba(191,160,101,.35);text-transform:uppercase;font-weight:700}
+
+/* Layouts */
+.c-sb {position:absolute;inset:0;padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+.c-end{position:absolute;inset:0;padding:28px;display:flex;flex-direction:column;justify-content:flex-end}
+.c-all{position:absolute;inset:0;padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+
+/* TYPE — Montserrat exactly like the site */
+.ey  {font-size:8px;letter-spacing:4px;color:var(--amber);text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.ey-w{font-size:8px;letter-spacing:4px;color:rgba(255,255,255,.4);text-transform:uppercase;font-weight:600;margin-bottom:8px}
+.ey-d{font-size:8px;letter-spacing:4px;color:var(--sage);text-transform:uppercase;font-weight:700;margin-bottom:8px}
+
+.h1  {font-size:38px;font-weight:800;text-transform:uppercase;color:#fff;line-height:1.02;letter-spacing:-.02em}
+.h1 em{font-style:italic;color:var(--amber)}
+.h1-d{font-size:32px;font-weight:800;text-transform:uppercase;color:var(--forest);line-height:1.02;letter-spacing:-.02em}
+.h1-d em{font-style:italic;color:var(--amber)}
+.h2  {font-size:24px;font-weight:700;color:#fff;line-height:1.1;text-transform:uppercase;letter-spacing:-.01em}
+.h2 em{font-style:italic;color:var(--amber)}
+
+.bd  {font-size:10px;color:rgba(255,255,255,.5);line-height:1.7;font-weight:400}
+.bd-d{font-size:10px;color:var(--txt2);line-height:1.7}
+
+.div-a  {width:24px;height:2px;background:var(--amber);margin:14px 0;border-radius:1px}
+.div-a-c{width:24px;height:2px;background:var(--amber);margin:14px auto;border-radius:1px}
+
+/* Buttons — same pill style as site */
+.btn-a{display:inline-block;background:var(--amber);color:var(--forest);font-size:8px;font-weight:800;letter-spacing:3px;text-transform:uppercase;padding:10px 22px;border-radius:50px}
+.btn-f{display:inline-block;background:var(--forest);color:#fff;font-size:8px;font-weight:800;letter-spacing:3px;text-transform:uppercase;padding:10px 22px;border-radius:50px}
+.btn-ow{display:inline-block;border:1.5px solid rgba(255,255,255,.28);color:#fff;font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:8px 20px;border-radius:50px}
+.btn-oa{display:inline-block;border:1.5px solid rgba(191,160,101,.4);color:var(--amber);font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:8px 20px;border-radius:50px}
+
+/* Stat row */
+.stat-row{display:flex;border:1px solid rgba(255,255,255,.1);border-radius:10px;overflow:hidden}
+.s-item {flex:1;padding:14px 8px;text-align:center;border-right:1px solid rgba(255,255,255,.07)}
+.s-item:last-child{border-right:none}
+.s-val{font-size:22px;font-weight:800;color:var(--amber);line-height:1}
+.s-lbl{font-size:7px;color:rgba(255,255,255,.3);letter-spacing:1px;margin-top:3px;text-transform:uppercase;font-weight:600}
+
+/* Pillar list */
+.pl{display:flex;flex-direction:column;margin-top:14px}
+.pi{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.pi:first-child{border-top:1px solid rgba(255,255,255,.07)}
+.pn{font-size:12px;font-weight:300;font-style:italic;color:rgba(191,160,101,.25);min-width:20px}
+.pt{font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px}
+.pd{font-size:8px;color:rgba(255,255,255,.3);margin-left:auto;text-align:right;line-height:1.3;max-width:80px}
+
+/* Feature list */
+.fl{display:flex;flex-direction:column}
+.fi{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid rgba(30,51,48,.06)}
+.fi:last-child{border-bottom:none}
+.fdot{width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0;margin-top:3px}
+.ft{font-size:9px;color:var(--txt2);line-height:1.5}
+
+/* Step list */
+.sl2{display:flex;flex-direction:column}
+.si{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.si:last-child{border-bottom:none}
+.sn{font-size:12px;font-weight:300;font-style:italic;color:rgba(191,160,101,.2);min-width:18px}
+.sbx .st{font-size:11px;color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+.sbx .sd{font-size:8px;color:rgba(255,255,255,.35);margin-top:2px}
+
+/* Quote */
+.qm  {font-size:52px;font-weight:800;font-style:italic;color:var(--amber);line-height:.7}
+.qt  {font-size:17px;font-weight:500;font-style:italic;color:#fff;line-height:1.55;margin-top:4px}
+.qa  {font-size:8px;color:rgba(255,255,255,.35);letter-spacing:3px;text-transform:uppercase;font-weight:700}
+.stars{font-size:10px;color:var(--amber);letter-spacing:4px}
+
+/* Carousel */
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .3s;pointer-events:none}
+.slide.on{opacity:1;pointer-events:all}
+.snav{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:4px;z-index:20}
+.sdot{width:5px;height:5px;border-radius:2px;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}
+.sdot.on{background:var(--amber);width:18px}
+
+/* Download button */
+.dl{background:var(--forest);border:none;color:rgba(255,255,255,.55);padding:10px;width:100%;font-family:'Montserrat',sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;border-radius:4px;transition:all .2s;font-weight:700}
+.dl:hover{background:var(--moss);color:var(--amber)}
+
+.caption{font-size:10px;color:var(--txt2);line-height:1.65;font-style:italic;padding:0 2px}
+
+/* Section divider */
+.sdiv{max-width:1060px;margin:64px auto 44px;display:flex;align-items:center;gap:16px}
+.sdiv-l{flex:1;height:1px;background:var(--bdr)}
+.sdiv-t{font-size:20px;font-weight:800;color:var(--txt2);white-space:nowrap;text-transform:uppercase;letter-spacing:-.01em}
+.sdiv-t em{color:var(--amber);font-style:italic}
+
+/* Copy grid */
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:1060px;margin:0 auto}
+.ccard{background:#fff;border-left:3px solid var(--amber);padding:18px;border-radius:4px;box-shadow:0 2px 12px rgba(30,51,48,.06)}
+.cn{font-size:28px;font-weight:900;font-style:italic;color:rgba(191,160,101,.12);line-height:1}
+.ct{font-size:10px;font-weight:800;color:var(--forest);margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
+.cp{font-size:10px;color:var(--txt2);line-height:1.7;margin-top:8px;font-style:italic}
+.ch{font-size:9px;color:var(--sage);margin-top:10px}
+
+/* Footer */
+.pfooter{max-width:1060px;margin:56px auto 0;padding-top:20px;border-top:1px solid var(--bdr);display:flex;justify-content:space-between;align-items:center}
+.pf-logo{display:flex;align-items:center;gap:10px}
+.pf-dot{width:8px;height:8px;border-radius:50%;background:var(--amber)}
+.pf-name{font-size:12px;color:var(--txt2);letter-spacing:2px;font-weight:700;text-transform:uppercase}
+.pf-note{font-size:9px;color:var(--txt2);letter-spacing:2px;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<div class="ph">
+  <div class="ph-badge">Healthy Space Club · Instagram 2026</div>
+  <div class="ph-title">9 Posts<br>para <em>Instagram</em></div>
+  <div class="ph-line"></div>
+  <div class="ph-sub">Diseño · Copy · Descargables</div>
+</div>
+
+<div class="grid">
+
+<!-- 01 PRESENTACIÓN -->
+<div class="card">
+  <div class="card-meta"><span class="card-n">01/09</span><span class="badge b-p">Post</span></div>
+  <div class="canvas" id="p1">
+    <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=900&q=85')"></div>
+    <div class="ov-top"></div><div class="at"></div><div class="gl-tl"></div>
+    <div class="c-sb">
+      <div>
+        <div class="ey">Club Digital Wellness</div>
+        <div class="h1">Tu coach,<br>nutriólogo<br>y entrenador<br><em>en uno.</em></div>
+      </div>
+      <div>
+        <div class="div-a"></div>
+        <div class="bd" style="max-width:220px">Un sistema real para quienes eligen vivir bien — sin complicarse la vida.</div>
+        <div style="margin-top:16px"><span class="btn-a">Únete al Club →</span></div>
+      </div>
+    </div>
+    <div class="bwm">Healthy Space Club</div>
+  </div>
+  <button class="dl" onclick="dl('p1','01-presentacion')">↓ Descargar</button>
+  <div class="caption">"Hola. Somos Healthy Space Club. No somos otra app de fitness. Somos el sistema completo que te faltaba para vivir bien. Link en bio."</div>
+</div>
+
+<!-- 02 LOS 3 PILARES -->
+<div class="card">
+  <div class="card-meta"><span class="card-n">02/09</span><span class="badge b-r">Reel</span></div>
+  <div class="canvas" id="p2">
+    <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&q=85')"></div>
+    <div class="ov-moss"></div><div class="at-a"></div><div class="gl-tl"></div>
+    <div class="c-sb">
+      <div>
+        <div class="ey">Todo incluido</div>
+        <div class="h1" style="font-size:32px">Todo lo que<br>necesitas.<br><em>En uno.</em></div>
+      </div>
+      <div class="pl">
+        <div class="pi"><div class="pn">01</div><div class="pt">Nutrición</div><div class="pd">Plan personal · Recetas en video</div></div>
+        <div class="pi"><div class="pn">02</div><div class="pt">Entrenamiento</div><div class="pd">Ruta oficial · Video por ejercicio</div></div>
+        <div class="pi"><div class="pn">03</div><div class="pt">Mentalidad</div><div class="pd">Hábitos · Sistema de vida</div></div>
+      </div>
+    </div>
+    <div class="bwm">Healthy Space Club</div>
+  </div>
+  <button class="dl" onclick="dl('p2','02-tres-pilares')">↓ Descargar</button>
+  <div class="caption">"Coach + nutriólogo + entrenador personal. Todo en un sistema. Todo en tu bolsillo. Por $29 al mes."</div>
+</div>
+
+<!-- 03 CARRUSEL PARA QUIÉN -->
+<div class="card">
+  <div class="card-meta"><span class="card-n">03/09</span><span class="badge b-c">Carrusel · clic navega</span></div>
+  <div class="canvas" id="p3">
+    <div class="slide on">
+      <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=85')"></div>
+      <div class="ov-bot"></div><div class="at"></div>
+      <div class="c-end">
+        <div class="ey-w">El Club es para ti, si...</div>
+        <div class="h1" style="font-size:30px">Ya intentaste.<br>No fue<br><em>sostenible.</em></div>
+        <div style="margin-top:14px"><span class="btn-ow">Desliza →</span></div>
+      </div>
+      <div class="bwm">Healthy Space Club</div>
+    </div>
+    <div class="slide">
+      <div class="ov-solid"></div><div class="at-a"></div><div class="bgn">01</div>
+      <div class="c-sb" style="padding:32px">
+        <div class="ey">Señal 01</div>
+        <div><div class="h2" style="font-size:22px">Empezaste dietas<br>que <em>no duraron</em></div><div class="div-a"></div><div class="bd">No era falta de voluntad. Era falta de sistema. El Club te da estructura real, no reglas imposibles.</div></div>
+        <div style="font-size:7px;letter-spacing:3px;color:rgba(191,160,101,.3);text-transform:uppercase;font-weight:700">Healthy Space Club</div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="ov-solid"></div><div class="at-a"></div><div class="bgn">02</div>
+      <div class="c-sb" style="padding:32px">
+        <div class="ey">Señal 02</div>
+        <div><div class="h2" style="font-size:22px">No sabes cómo<br>entrenar <em>bien</em></div><div class="div-a"></div><div class="bd">Cada ejercicio tiene su video con técnica paso a paso. Gym, casa o 20 min — el sistema se adapta a ti.</div></div>
+        <div style="font-size:7px;letter-spacing:3px;color:rgba(191,160,101,.3);text-transform:uppercase;font-weight:700">Healthy Space Club</div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="ov-solid"></div><div class="at-a"></div><div class="bgn">03</div>
+      <div class="c-sb" style="padding:32px">
+        <div class="ey">Señal 03</div>
+        <div><div class="h2" style="font-size:22px">Quieres energía,<br>no solo <em>bajar peso</em></div><div class="div-a"></div><div class="bd">Los 3 pilares trabajan juntos. El cambio es total y dura para siempre.</div></div>
+        <div style="font-size:7px;letter-spacing:3px;color:rgba(191,160,101,.3);text-transform:uppercase;font-weight:700">Healthy Space Club</div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="ov-grad"></div><div class="gl-tl"></div>
+      <div class="c-all">
+        <div class="ey">¿Te identificas?</div>
+        <div class="h1" style="font-size:28px;margin-top:8px">El Club fue<br>hecho para<br><em>ti.</em></div>
+        <div class="div-a-c"></div>
+        <div class="bd" style="text-align:center;max-width:190px">$29/mes · Sin contratos<br>Cancela cuando quieras</div>
+        <div style="margin-top:18px"><span class="btn-a">Comenzar →</span></div>
+      </div>
+      <div class="bwm">Healthy Space Club</div>
+    </div>
+    <div class="snav" id="sn3">
+      <div class="sdot on" onclick="go('p3','sn3',0)"></div><div class="sdot" onclick="go('p3','sn3',1)"></div>
+      <div class="sdot" onclick="go('p3','sn3',2)"></div><div class="sdot" onclick="go('p3','sn3',3)"></div>
+      <div class="sdot" onclick="go('p3','sn3',4)"></div>
+    </div>
+  </div>
+  <button class="dl" onclick="dl('p3','03-para-quien')">↓ Descargar slide actual</button>
+  <div class="caption">"¿Cuántas veces empezaste y no lo sostuviste? No era tu culpa. Era que no tenías el sistema correcto. Desliza →"</div>
+</div>
+
+<!-- 04 HOOK STATS -->
+<div class="card">
+  <div class="card-meta"><span class="card-n">04/09</span><span class="badge b-p">Post</span></div>
+  <div class="canvas" id="p4">
+    <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=85')"></div>
+    <div class="ov-forest"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(30,51,48,.97) 35%,rgba(30,51,48,.35) 100%)"></div>
+    <div class="at"></div><div class="gl-tl"></div>
+    <div class="c-sb">
+      <div>
+        <div class="ey">La propuesta</div>
+        <div class="h1" style="font-size:28px">¿Cuándo fue<br>la última vez<br>que los 3<br>estuvieron<br><em>alineados?</em></div>
+      </div>
+      <div>
+        <div class="stat-row" style="margin-bottom:14px">
+          <div class="s-item"><div class="s-val">3×1</div><div class="s-lbl">Pilares</div></div>
+          <div class="s-item"><div class="s-val">$29</div><div class="s-lbl">Al mes</div></div>
+          <div class="s-item"><div class="s-val">28</div><div class="s-lbl">Días plan</div></div>
+        </div>
+        <span class="btn-oa">Link en bio</span>
+      </div>
+    </div>
+    <div class="bwm">Healthy Space Club</div>
+  </div>
+  <button class="dl" onclick="dl('p4','04-propuesta')">↓ Descargar</button>
+  <div class="caption">"Nutrición + entrenamiento + mentalidad. Por separado ya lo intentaste. Juntos, con un sistema que los conecta, es cuando todo cambia."</div>
+</div>
+
+<!-- 05 CÓMO FUNCIONA -->
+<div class="card">
+  <div class="card-meta"><span class="card-n">05/09</span><span class="badge b-r">Reel</span></div>
+  <div class="canvas" id="p5">
+    <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&q=85')"></div>
+    <div class="ov-bot"></div><div class="at"></div>
+    <div class="c-sb">
+      <div>
+        <div class="ey">Así funciona</div>
+        <div class="h1" style="font-size:26px">El sistema<br>trabaja.<br><em>Tú solo<br>apareces.</em></div>
+      </div>
+      <div class="sl2">
+        <div class="si"><div class="sn">01</div><div class="sbx"><div class="st">Te unes al Club</div><div class="sd">Acceso inmediato. Sin contratos.</div></div></div>
+        <div class="si"><div class="sn">02</div><div class="sbx"><div class="st">Tu perfil de hábitos</div><div class="sd">8 preguntas. Tu plan queda listo.</div></div></div>
+        <div class="si"><div class="sn">03</div><div class="sbx"><div class="st">Videos + Plan activos</div><div class="sd">Todo en tu celular desde hoy.</div></div></div>
+        <div class="si"><div class="sn">04</div><div class="sbx"><div class="st">Construyes el hábito</div><div class="sd">El sistema progresa contigo.</div></div></div>
+      </div>
+    </div>
+    <div class="bwm">Healthy Space Club</div>
+  </div>
+  <button class="dl" onclick="dl('p5','05-como-funciona')">↓ Descargar</button>
+  <div class="caption">"4 pasos. Te unes → perfil → plan → hábito. El sistema hace el trabajo. Tú solo tienes que aparecer."</div>
+</div>
+
+<!-- 06 TESTIMONIO -->
+<div class="card">
+  <div class="card-meta"><span class="card-n">06/09</span><span class="badge b-p">Post</span></div>
+  <div class="canvas" id="p6">
+    <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=900&q=85')"></div>
+    <div class="ov-moss"></div><div class="gl-tl"></div><div class="gl-br"></div>
+    <div class="at-a"></div>
+    <div style="position:absolute;top:20px;left:20px;right:20px;bottom:20px;border:1px solid rgba(191,160,101,.15);border-radius:2px;pointer-events:none"></div>
+    <div class="c-all">
+      <div class="stars">★ ★ ★ ★ ★</div>
+      <div class="qm" style="margin-top:10px">"</div>
+      <div class="qt" style="margin-top:-4px">Bajé 8 kg sin sentir que estaba a dieta. El sistema simplemente funciona solo.</div>
+      <div class="div-a-c"></div>
+      <div class="qa">Sofía R. · Miembro · 4 meses</div>
+    </div>
+    <div class="bwm">Healthy Space Club</div>
+  </div>
+  <button class="dl" onclick="dl('p6','06-testimonio')">↓ Descargar</button>
+  <div class="caption">"Esto pasa cuando tienes el sistema correcto. No necesitas más motivación. Necesitas estructura. ¿Cuándo empiezas tú?"</div>
+</div>
+
+<!-- 07 PILAR NUTRICIÓN -->
+<div class="card">
+  <div class="card-meta"><span class="card-n">07/09</span><span class="badge b-p">Post</span></div>
+  <div class="canvas" id="p7">
+    <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?w=900&q=85')"></div>
+    <div class="ov-cream"></div><div class="at"></div>
+    <div class="c-sb">
+      <div>
+        <div class="ey-d">Pilar 01 · Nutrición</div>
+        <div class="h1-d" style="font-size:26px">Comer bien<br>sin contar<br>cada <em>caloría.</em></div>
+      </div>
+      <div>
+        <div class="div-a"></div>
+        <div class="fl">
+          <div class="fi"><div class="fdot"></div><div class="ft">Plan personalizado según tu objetivo y peso</div></div>
+          <div class="fi"><div class="fdot"></div><div class="ft">Recetas semanales en video paso a paso</div></div>
+          <div class="fi"><div class="fdot"></div><div class="ft">Se recalibra cada 3 meses con tu progreso</div></div>
+          <div class="fi"><div class="fdot"></div><div class="ft">Sostenible, repetible, sin dietas extremas</div></div>
+        </div>
+        <div style="margin-top:14px"><span class="btn-f">Tu nutriólogo en el bolsillo</span></div>
+      </div>
+    </div>
+    <div class="bwm-d">Healthy Space Club</div>
+  </div>
+  <button class="dl" onclick="dl('p7','07-pilar-nutricion')">↓ Descargar</button>
+  <div class="caption">"Tu plan de alimentación ya viene listo. Se actualiza. Tiene video para cada receta. Sin contar calorías a mano."</div>
+</div>
+
+<!-- 08 CARRUSEL PROCESO -->
+<div class="card">
+  <div class="card-meta"><span class="card-n">08/09</span><span class="badge b-c">Carrusel · clic navega</span></div>
+  <div class="canvas" id="p8">
+    <div class="slide on">
+      <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=85')"></div>
+      <div class="ov-bot"></div><div class="at"></div>
+      <div class="c-end">
+        <div class="ey-w">El proceso completo</div>
+        <div class="h1" style="font-size:28px">Simple,<br>sostenible,<br><em>sistematizado.</em></div>
+        <div style="margin-top:14px"><span class="btn-ow">Desliza →</span></div>
+      </div>
+      <div class="bwm">Healthy Space Club</div>
+    </div>
+    <div class="slide">
+      <div class="ov-solid"></div><div class="at-a"></div><div class="bgn">1</div>
+      <div class="c-sb" style="padding:32px">
+        <div class="ey">Paso 01</div>
+        <div><div class="h2" style="font-size:22px">Te unes al <em>Club</em></div><div class="div-a"></div><div class="bd">Acceso inmediato a los 3 pilares. Sin contratos. Desde tu celular o computadora.</div></div>
+        <div style="font-size:7px;letter-spacing:3px;color:rgba(191,160,101,.3);text-transform:uppercase;font-weight:700">Healthy Space Club</div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="ov-solid"></div><div class="at-a"></div><div class="bgn">2</div>
+      <div class="c-sb" style="padding:32px">
+        <div class="ey">Paso 02</div>
+        <div><div class="h2" style="font-size:22px">Tu perfil de <em>hábitos</em></div><div class="div-a"></div><div class="bd">8 preguntas. Tu plan de nutrición y entrenamiento personalizado queda listo desde el día 1.</div></div>
+        <div style="font-size:7px;letter-spacing:3px;color:rgba(191,160,101,.3);text-transform:uppercase;font-weight:700">Healthy Space Club</div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="ov-solid"></div><div class="at-a"></div><div class="bgn">3</div>
+      <div class="c-sb" style="padding:32px">
+        <div class="ey">Paso 03</div>
+        <div><div class="h2" style="font-size:22px">Videos + Plan <em>activos</em></div><div class="div-a"></div><div class="bd">Cada ejercicio tiene su video. Cada receta tiene su video. Organizado por día — listo desde hoy.</div></div>
+        <div style="font-size:7px;letter-spacing:3px;color:rgba(191,160,101,.3);text-transform:uppercase;font-weight:700">Healthy Space Club</div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="ov-grad"></div><div class="gl-tl"></div>
+      <div class="c-sb" style="padding:32px">
+        <div class="ey">Paso 04</div>
+        <div><div class="h2" style="font-size:22px">Construyes el<br>hábito <em>real</em></div><div class="div-a"></div><div class="bd">El sistema progresa contigo. No es un reto de 30 días. Es el sistema para tu vida.</div></div>
+        <span class="btn-a" style="width:fit-content">Comenzar →</span>
+      </div>
+    </div>
+    <div class="snav" id="sn8">
+      <div class="sdot on" onclick="go('p8','sn8',0)"></div><div class="sdot" onclick="go('p8','sn8',1)"></div>
+      <div class="sdot" onclick="go('p8','sn8',2)"></div><div class="sdot" onclick="go('p8','sn8',3)"></div>
+      <div class="sdot" onclick="go('p8','sn8',4)"></div>
+    </div>
+  </div>
+  <button class="dl" onclick="dl('p8','08-proceso')">↓ Descargar slide actual</button>
+  <div class="caption">"4 pasos y ya estás dentro. Sin complicaciones. Desliza para verlo completo."</div>
+</div>
+
+<!-- 09 CTA FINAL -->
+<div class="card">
+  <div class="card-meta"><span class="card-n">09/09</span><span class="badge b-p">Post</span></div>
+  <div class="canvas" id="p9">
+    <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=900&q=85')"></div>
+    <div class="ov-moss"></div><div class="gl-tl"></div><div class="gl-br"></div>
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--moss),var(--amber))"></div>
+    <div style="position:absolute;top:20px;left:20px;right:20px;bottom:20px;border:1px solid rgba(191,160,101,.14);border-radius:2px;pointer-events:none"></div>
+    <div class="c-all">
+      <div class="ey">Únete al Club</div>
+      <div class="h1" style="font-size:34px;margin-top:10px">El sistema<br>que te<br><em>faltaba.</em></div>
+      <div class="div-a-c"></div>
+      <div class="bd" style="text-align:center;max-width:200px">Nutrición · Entrenamiento · Mentalidad<br>Todo incluido. Sin contratos.</div>
+      <div style="margin-top:8px;font-size:10px;color:rgba(255,255,255,.25)">Desde <span style="color:var(--amber);font-weight:800">$29/mes</span></div>
+      <div style="margin-top:18px"><span class="btn-a">Comenzar ahora →</span></div>
+    </div>
+    <div class="bwm">healthyspaceclub.netlify.app</div>
+  </div>
+  <button class="dl" onclick="dl('p9','09-cta-final')">↓ Descargar</button>
+  <div class="caption">"$29 al mes. Todo incluido. Sin contratos. El sistema que te faltaba. Link en bio."</div>
+</div>
+
+</div>
+
+<!-- COPY GUIDE -->
+<div class="sdiv"><div class="sdiv-l"></div><div class="sdiv-t">Copy e <em>hashtags</em></div><div class="sdiv-l"></div></div>
+<div class="cgrid">
+  <div class="ccard"><div class="cn">01</div><div class="ct">Presentación</div><div class="cp">"Hola. Somos Healthy Space Club. No somos otro plan de dieta. Somos el sistema completo que te faltaba — nutrición, entrenamiento y mentalidad en un solo lugar. Link en bio."</div><div class="ch">#healthyspaceclub #bienestar #clubwellness #saludintegral #habitos</div></div>
+  <div class="ccard"><div class="cn">02</div><div class="ct">Los 3 Pilares</div><div class="cp">"Coach + nutriólogo + entrenador personal. Todo en un sistema. Todo en tu bolsillo. Por $29 al mes tienes los 3 pilares que transforman tu vida."</div><div class="ch">#3en1 #nutricion #entrenamiento #mentalidad #sistemadehavitos</div></div>
+  <div class="ccard"><div class="cn">03</div><div class="ct">Para Quién Es</div><div class="cp">"¿Cuántas veces empezaste y no lo sostuviste? No era tu culpa. Era que no tenías el sistema correcto. El Club no te pide más fuerza de voluntad. Te da estructura. Desliza →"</div><div class="ch">#habitos #cambiodevida #saludsostenible #wellness</div></div>
+  <div class="ccard"><div class="cn">04</div><div class="ct">Propuesta 3×1</div><div class="cp">"¿Cuándo fue la última vez que nutrición, entrenamiento y mentalidad estuvieron alineados? El Club lo hace posible. Un sistema. Todo incluido. Todo conectado."</div><div class="ch">#sistemadebienestar #healthylifestyle #digitalwellness</div></div>
+  <div class="ccard"><div class="cn">05</div><div class="ct">Cómo Funciona</div><div class="cp">"4 pasos. Te unes → perfil → plan → hábito. El sistema trabaja semana a semana. Tú solo tienes que aparecer. Así de simple, así de real."</div><div class="ch">#comoempezar #habitos #sistemawellness #saludreal</div></div>
+  <div class="ccard"><div class="cn">06</div><div class="ct">Testimonio</div><div class="cp">"8 kg en 4 meses sin sentir que estaba a dieta. Esto pasa cuando tienes el sistema correcto. No necesitas más motivación. Necesitas estructura. ¿Cuándo empiezas tú?"</div><div class="ch">#resultados #transformacion #nutricion #habitos</div></div>
+  <div class="ccard"><div class="cn">07</div><div class="ct">Pilar Nutrición</div><div class="cp">"Tu plan de alimentación ya viene listo. Se actualiza con recetas nuevas cada semana. Se recalibra cada 3 meses. Sin contar calorías a mano."</div><div class="ch">#nutricion #planalimentacion #recetassanas #comersano</div></div>
+  <div class="ccard"><div class="cn">08</div><div class="ct">El Proceso</div><div class="cp">"Simple, sostenible, sistematizado. No es un reto de 30 días. Es el sistema que construye tu versión sana de forma permanente. Desliza para verlo completo."</div><div class="ch">#proceso #sistemawellness #habitos #cambioreal</div></div>
+  <div class="ccard"><div class="cn">09</div><div class="ct">CTA Final</div><div class="cp">"$29 al mes. Todo incluido. Sin contratos. Nutrición, entrenamiento y mentalidad — en tu bolsillo. El sistema que te faltaba. Link en bio."</div><div class="ch">#unetealhclub #healthyspaceclub #comenzar #bienestar</div></div>
+</div>
+
+<div class="pfooter">
+  <div class="pf-logo"><div class="pf-dot"></div><div class="pf-name">Healthy Space Club</div></div>
+  <div class="pf-note">9 publicaciones · Instagram 2026</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+document.querySelectorAll('.canvas').forEach(canvas=>{
+  let cur=0;
+  const slides=canvas.querySelectorAll('.slide');
+  if(!slides.length)return;
+  const nav=canvas.querySelector('.snav');
+  canvas.addEventListener('click',e=>{
+    if(e.target.classList.contains('sdot'))return;
+    cur=(cur+1)%slides.length;
+    slides.forEach((s,i)=>s.classList.toggle('on',i===cur));
+    if(nav)nav.querySelectorAll('.sdot').forEach((d,i)=>d.classList.toggle('on',i===cur));
+  });
+});
+function go(cid,nid,idx){
+  document.getElementById(cid).querySelectorAll('.slide').forEach((s,i)=>s.classList.toggle('on',i===idx));
+  document.getElementById(nid).querySelectorAll('.sdot').forEach((d,i)=>d.classList.toggle('on',i===idx));
+}
+function dl(id,name){
+  const el=document.getElementById(id);
+  html2canvas(el,{scale:3,useCORS:true,allowTaint:true,backgroundColor:null,logging:false})
+    .then(canvas=>{
+      const a=document.createElement('a');
+      a.download='HSC-'+name+'.png';
+      a.href=canvas.toDataURL('image/png');
+      a.click();
+    });
+}
+</script>
+</body>
+</html>
