@@ -197,15 +197,12 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 .ey-g{font-size:24px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#BFA065}
 .ey-dk{font-size:24px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#2E4A42}
 /* ══ MOBILE RESPONSIVE ══ */
-@media(max-width:460px){
-  body{padding:20px 12px}
+@media(max-width:440px){
+  body{padding:20px 10px}
   .phd h1{font-size:9px}
-  .sl,.sl-sq{width:100%!important;height:auto!important;aspect-ratio:4/5}
-  .sl-sq{aspect-ratio:1/1}
+  .car{gap:10px;padding-bottom:10px}
   .brow{width:100%}
-  .car{gap:10px}
-  .sw{width:calc(100vw - 24px)}
-  .sec{margin-bottom:48px}
+  .sec{margin-bottom:44px}
   .cap,.desc{max-width:100%}
 }
 </style>
@@ -843,15 +840,37 @@ function trS(id){const s=document.getElementById(id).querySelector('.ib.sw');if(
 
 // Mobile responsive scaling
 function scaleSl(){
-  if(window.innerWidth>460)return;
-  const w=window.innerWidth-24;
-  document.querySelectorAll('.si').forEach(s=>{s.style.transform='scale('+(w/1080)+')';});
-  document.querySelectorAll('.si-sq').forEach(s=>{s.style.transform='scale('+(w/2160)+')';});
-  document.querySelectorAll('.sl').forEach(s=>{s.style.width=w+'px';s.style.height=(w*1.25)+'px';});
-  document.querySelectorAll('.sl-sq').forEach(s=>{s.style.width=w+'px';s.style.height=w+'px';});
+  const isMobile = window.innerWidth <= 440;
+  const w = isMobile ? window.innerWidth - 20 : 400;
+  const scale1080 = w / 1080;
+  const scale2160 = w / 2160;
+  
+  document.querySelectorAll('.si').forEach(s => {
+    s.style.transform = 'scale(' + scale1080 + ')';
+  });
+  document.querySelectorAll('.si-sq').forEach(s => {
+    s.style.transform = 'scale(' + scale2160 + ')';
+  });
+  document.querySelectorAll('.sl').forEach(s => {
+    s.style.width = w + 'px';
+    s.style.height = Math.round(w * 1.25) + 'px';
+  });
+  document.querySelectorAll('.sl-sq').forEach(s => {
+    s.style.width = w + 'px';
+    s.style.height = w + 'px';
+  });
+  if(isMobile){
+    document.querySelectorAll('.sw').forEach(s => {
+      s.style.width = w + 'px';
+      s.style.flex = '0 0 ' + w + 'px';
+    });
+    document.querySelectorAll('.brow').forEach(s => {
+      s.style.width = w + 'px';
+    });
+  }
 }
 scaleSl();
-window.addEventListener('resize',scaleSl);
+window.addEventListener('resize', scaleSl);
 </script>
 </body>
 </html>
