@@ -37,7 +37,7 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 
 /* ══ SLIDE ENGINE ══ */
 .si{width:1080px;height:1350px;transform:scale(0.3704);transform-origin:top left;position:relative;overflow:hidden;font-family:'Montserrat',sans-serif}
-.si-sq{width:1080px;height:1080px;transform:scale(0.3704);transform-origin:top left;position:relative;overflow:hidden;font-family:'Montserrat',sans-serif}
+.si-sq{width:2160px;height:2160px;transform:scale(0.1852);transform-origin:top left;position:relative;overflow:hidden;font-family:'Montserrat',sans-serif}
 
 /* BGs */
 .bg-c{position:absolute;inset:0;background:#F6F2EA}
@@ -68,10 +68,9 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 .sc-e{justify-content:flex-end}
 
 /* ══ LOGO (real image + CSS "CLUB") ══ */
-.L{display:flex;flex-direction:column;align-items:flex-start;flex-shrink:0;user-select:none}
-.L.Lc{align-items:center}
+.L{display:flex;flex-direction:column;align-items:center;flex-shrink:0;user-select:none}
 .L img{display:block;object-fit:contain}
-.L .Lsub{font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.28em;text-transform:uppercase;margin-top:-4px;text-align:center;width:100%}
+.L .Lsub{font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.28em;text-transform:uppercase;margin-top:-4px;text-align:center}
 /* Sizes */
 .L-s img{height:56px}.L-s .Lsub{font-size:15px}
 .L-m img{height:72px}.L-m .Lsub{font-size:18px}
@@ -139,13 +138,83 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 [contenteditable="true"]:focus{box-shadow:0 0 0 2px rgba(191,160,101,.4)}
 .ib.sw{cursor:pointer}
 .ib.sw:hover::before{content:'📷 Click para cambiar';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(30,51,48,.88);color:#BFA065;font-size:18px;font-weight:600;padding:14px 26px;border-radius:10px;white-space:nowrap;z-index:50;pointer-events:none}
+
+/* ══ BATCH 2 STYLES ══ */
+/* Stat row */
+.srow{display:flex;gap:0;width:100%}
+.sitem{flex:1;text-align:center;padding:24px 12px;border-right:1px solid rgba(191,160,101,.1)}
+.sitem:last-child{border-right:none}
+.sval{font-size:64px;font-weight:900;color:#BFA065;letter-spacing:-.03em;line-height:1}
+.slbl{font-size:14px;color:rgba(255,255,255,.28);letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-top:6px}
+
+/* Feature list */
+.fl{display:flex;flex-direction:column;gap:18px}
+.fi{display:flex;align-items:flex-start;gap:16px}
+.fdot{width:10px;height:10px;border-radius:50%;background:#BFA065;margin-top:7px;flex-shrink:0}
+.fdot-dk{width:10px;height:10px;border-radius:50%;background:#2E4A42;margin-top:7px;flex-shrink:0}
+.ftx{font-size:26px;color:rgba(255,255,255,.5);line-height:1.5;font-weight:500}
+.ftx-dk{font-size:26px;color:rgba(30,51,48,.5);line-height:1.5;font-weight:500}
+
+/* Testimonial */
+.stars{font-size:22px;color:#BFA065;letter-spacing:6px}
+.qm{font-size:120px;font-weight:900;font-style:italic;color:#BFA065;line-height:.5}
+.qtx{font-size:38px;font-weight:500;font-style:italic;color:#F6F2EA;line-height:1.5}
+.qau{font-size:16px;color:rgba(255,255,255,.25);letter-spacing:3px;text-transform:uppercase;font-weight:700}
+
+/* Frame decoration */
+.frame{position:absolute;top:32px;left:32px;right:32px;bottom:32px;border:1px solid rgba(191,160,101,.1);border-radius:3px;z-index:3;pointer-events:none}
+
+/* Big bg number */
+.bgn{position:absolute;font-size:400px;font-weight:900;font-style:italic;color:rgba(191,160,101,.03);line-height:1;right:-20px;bottom:-40px;z-index:2;pointer-events:none}
+
+/* Accent top bar */
+.atop{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#2E4A42,#BFA065);z-index:15}
+
+/* Glow accents */
+.gltl{position:absolute;top:-80px;left:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(191,160,101,.08) 0%,transparent 70%);z-index:2;pointer-events:none}
+.glbr{position:absolute;bottom:-80px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(46,74,66,.1) 0%,transparent 70%);z-index:2;pointer-events:none}
+
+/* Watermark */
+.wm{position:absolute;bottom:24px;left:0;right:0;text-align:center;font-size:14px;letter-spacing:5px;color:rgba(255,255,255,.12);text-transform:uppercase;font-weight:700;z-index:10}
+.wm-g{color:rgba(191,160,101,.2)}
+
+/* Buttons */
+.btn-g{display:inline-block;background:#BFA065;color:#1e3330;font-size:22px;font-weight:800;letter-spacing:.5px;padding:22px 44px;border-radius:60px;text-transform:uppercase}
+.btn-o{display:inline-block;border:2px solid rgba(191,160,101,.3);color:#BFA065;font-size:20px;font-weight:700;letter-spacing:.5px;padding:20px 40px;border-radius:60px;text-transform:uppercase}
+
+/* Dark overlay for image posts */
+.ov-heavy .ib::after{background:linear-gradient(to top,rgba(30,51,48,.97) 35%,rgba(30,51,48,.35) 100%)}
+.ov-moss .ib::after{background:linear-gradient(155deg,rgba(30,51,48,.95),rgba(46,74,66,.92))}
+.ov-cream .ib::after{background:rgba(246,242,234,.93)}
+
+/* Heading white */
+.h-w-up{font-weight:900;line-height:1.05;letter-spacing:-.02em;color:#F6F2EA;text-transform:uppercase}
+.h-w-up em{color:#BFA065;font-style:italic}
+.h-dk-up{font-weight:900;line-height:1.05;letter-spacing:-.02em;color:#1e3330;text-transform:uppercase}
+.h-dk-up em{color:#BFA065;font-style:italic}
+
+/* Tag eyebrow for dark/light */
+.ey-g{font-size:24px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#BFA065}
+.ey-dk{font-size:24px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#2E4A42}
+/* ══ MOBILE RESPONSIVE ══ */
+@media(max-width:460px){
+  body{padding:20px 12px}
+  .phd h1{font-size:9px}
+  .sl,.sl-sq{width:100%!important;height:auto!important;aspect-ratio:4/5}
+  .sl-sq{aspect-ratio:1/1}
+  .brow{width:100%}
+  .car{gap:10px}
+  .sw{width:calc(100vw - 24px)}
+  .sec{margin-bottom:48px}
+  .cap,.desc{max-width:100%}
+}
 </style>
 </head>
 <body>
 
 <div class="phd">
   <h1>Healthy Space Club — Instagram Content Pack</h1>
-  <p>12 posts + foto de perfil · 1080×1350 · Edita textos y fotos → Descarga PNG</p>
+  <p>18 posts + foto de perfil · 1080×1350 · Edita textos y fotos → Descarga PNG</p>
   <div class="bg">✏️ Todo editable + descargable</div>
 </div>
 
@@ -154,19 +223,33 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 ══════════════════════════════════════════ -->
 <div class="sec">
 <div class="lbl">Foto de perfil — Instagram</div>
-<div class="desc">Logo de perfil para Instagram. 1080×1080. Se verá circular en la app.</div>
+<div class="desc">Logo de perfil para Instagram. 2160×2160 HD — sin pixeleo. Dos versiones: oscura y clara.</div>
 <div class="car"><div class="sw">
 <div class="sl sl-sq" id="pfp"><div class="si-sq">
   <div class="bg-f"></div>
   <div class="tx"></div>
-  <div style="position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px;">
-    <div class="L L-xl Lc L-wt" style="margin-bottom:16px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous"><span class="Lsub">CLUB</span></div>
-    <!-- Circular guide ring for Instagram crop -->
-    <div style="position:absolute;inset:60px;border-radius:50%;border:1px dashed rgba(191,160,101,.15);pointer-events:none;z-index:20"></div>
+  <div style="position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:200px;">
+    <div class="L Lc L-wt" style="margin-bottom:16px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous" style="height:280px;"><span class="Lsub" style="font-size:56px;letter-spacing:.32em;margin-top:-8px;">CLUB</span></div>
+    <div style="position:absolute;inset:140px;border-radius:50%;border:3px dashed rgba(191,160,101,.1);pointer-events:none;z-index:20"></div>
   </div>
 </div></div>
-<div class="brow"><button class="db" onclick="dlSq('pfp','perfil-instagram')">⬇ Descargar PNG (1080×1080)</button></div>
-</div></div></div>
+<div class="brow"><button class="db" onclick="dlSq('pfp','perfil-instagram-HD')">⬇ Descargar versión oscura (2160×2160)</button></div>
+</div>
+
+<!-- Light version -->
+<div class="sw">
+<div class="sl sl-sq" id="pfp2"><div class="si-sq">
+  <div class="bg-c"></div>
+  <div class="tx"></div>
+  <div style="position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:200px;">
+    <div class="L L-dk" style="margin-bottom:16px;"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1771971266/logo_ohaica.png" crossorigin="anonymous" style="height:280px;"><span class="Lsub" style="font-size:56px;letter-spacing:.32em;margin-top:-8px;">CLUB</span></div>
+    <div style="position:absolute;inset:140px;border-radius:50%;border:3px dashed rgba(46,74,66,.06);pointer-events:none;z-index:20"></div>
+  </div>
+</div></div>
+<div class="brow"><button class="db" onclick="dlSq('pfp2','perfil-instagram-LIGHT-HD')">⬇ Descargar versión clara (2160×2160)</button></div>
+</div>
+
+</div></div>
 
 <!-- ══════════════════════════════════════════
      POST 1 — MANIFIESTO
@@ -536,6 +619,194 @@ body{font-family:'Montserrat',sans-serif;background:#f4f1eb;color:#444;padding:4
 </div>
 </div></div></div>
 
+<!-- ══════════════════════════════════════════════════
+     POST 13 — PROPUESTA 3×1 / STATS
+══════════════════════════════════════════════════ -->
+<div class="sec">
+<div class="lbl">Post 13 — Imagen única</div>
+<div class="desc">Stats visuales. La propuesta en números.</div>
+<div class="cap"><b>Caption:</b> "Nutrición + entrenamiento + mentalidad. Por separado ya lo intentaste. Juntos, con un sistema, es cuando todo cambia."</div>
+<div class="car"><div class="sw">
+<div class="sl" id="p13"><div class="si ov-heavy">
+  <div class="ib sw" onclick="swI(this)"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1080&q=80" crossorigin="anonymous"></div>
+  <div class="tx"></div><div class="atop"></div><div class="gltl"></div>
+  <div class="sc" style="justify-content:space-between;">
+    <div>
+      <div class="ey-g" contenteditable="true">La propuesta</div>
+      <h2 class="h-w-up" style="font-size:68px;margin-top:16px;" contenteditable="true">¿Cuándo fue<br>la última vez<br>que los 3 estuvieron<br><em>alineados?</em></h2>
+    </div>
+    <div>
+      <div class="srow" style="margin-bottom:24px;">
+        <div class="sitem"><div class="sval" contenteditable="true">3×1</div><div class="slbl">Pilares</div></div>
+        <div class="sitem"><div class="sval" contenteditable="true">$29</div><div class="slbl">Al mes</div></div>
+        <div class="sitem"><div class="sval" contenteditable="true">28</div><div class="slbl">Días plan</div></div>
+      </div>
+      <span class="btn-o" contenteditable="true">Link en bio</span>
+    </div>
+  </div>
+  <div class="wm">Healthy Space Club</div>
+</div></div>
+<div class="brow">
+  <button class="db" onclick="dl('p13','post13-propuesta')">⬇ Descargar PNG</button>
+  <button class="db db2" onclick="trS('p13')">📷 Cambiar foto</button>
+</div>
+</div></div></div>
+
+<!-- ══════════════════════════════════════════════════
+     POST 14 — TESTIMONIO
+══════════════════════════════════════════════════ -->
+<div class="sec">
+<div class="lbl">Post 14 — Imagen única</div>
+<div class="desc">Social proof. Testimonio real con estrellas.</div>
+<div class="cap"><b>Caption:</b> "Esto pasa cuando tienes el sistema correcto. No necesitas más motivación. Necesitas estructura. ¿Cuándo empiezas tú?"</div>
+<div class="car"><div class="sw">
+<div class="sl" id="p14"><div class="si">
+  <div class="bg-f"></div>
+  <div class="tx"></div><div class="gltl"></div><div class="glbr"></div>
+  <div class="frame"></div>
+  <div class="sc sc-c" style="justify-content:center;">
+    <div class="stars">★ ★ ★ ★ ★</div>
+    <div class="qm" style="margin-top:24px;">"</div>
+    <div class="qtx" style="max-width:780px;margin-top:12px;" contenteditable="true">Bajé 8 kg sin sentir que estaba a dieta. El sistema simplemente funciona solo.</div>
+    <div class="dv dv-c"></div>
+    <div class="qau" contenteditable="true">Sofía R. · Miembro · 4 meses</div>
+  </div>
+  <div class="wm wm-g">Healthy Space Club</div>
+</div></div>
+<div class="brow"><button class="db" onclick="dl('p14','post14-testimonio')">⬇ Descargar PNG</button></div>
+</div></div></div>
+
+<!-- ══════════════════════════════════════════════════
+     POST 15 — PILAR NUTRICIÓN DETALLADO
+══════════════════════════════════════════════════ -->
+<div class="sec">
+<div class="lbl">Post 15 — Imagen única</div>
+<div class="desc">Pilar Nutrición con features detallados.</div>
+<div class="cap"><b>Caption:</b> "Tu plan de alimentación ya viene listo. Se actualiza. Tiene video para cada receta. Sin contar calorías a mano."</div>
+<div class="car"><div class="sw">
+<div class="sl" id="p15"><div class="si ov-cream">
+  <div class="ib sw" onclick="swI(this)"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1772042278/mealprep_wfczav.webp" crossorigin="anonymous"></div>
+  <div class="tx"></div><div class="atop"></div>
+  <div class="sc" style="justify-content:space-between;">
+    <div>
+      <div class="ey-dk" contenteditable="true">Pilar 01 · Nutrición</div>
+      <h2 class="h-dk-up" style="font-size:64px;margin-top:16px;" contenteditable="true">Comer bien<br>sin contar<br>cada <em>caloría.</em></h2>
+    </div>
+    <div>
+      <div class="dv"></div>
+      <div class="fl">
+        <div class="fi"><div class="fdot-dk"></div><div class="ftx-dk" contenteditable="true">Plan de 28 días con 4 cocinas del mundo</div></div>
+        <div class="fi"><div class="fdot-dk"></div><div class="ftx-dk" contenteditable="true">Recetas semanales en video paso a paso</div></div>
+        <div class="fi"><div class="fdot-dk"></div><div class="ftx-dk" contenteditable="true">Porciones exactas sin pesar nada</div></div>
+        <div class="fi"><div class="fdot-dk"></div><div class="ftx-dk" contenteditable="true">Sostenible, flexible, sin restricciones extremas</div></div>
+      </div>
+      <div style="margin-top:24px;"><span class="btn-g" contenteditable="true">Tu nutriólogo en el bolsillo</span></div>
+    </div>
+  </div>
+  <div class="wm wm-g">Healthy Space Club</div>
+</div></div>
+<div class="brow">
+  <button class="db" onclick="dl('p15','post15-nutricion-detalle')">⬇ Descargar PNG</button>
+  <button class="db db2" onclick="trS('p15')">📷 Cambiar foto</button>
+</div>
+</div></div></div>
+
+<!-- ══════════════════════════════════════════════════
+     POST 16 — PILAR ENTRENAMIENTO DETALLADO
+══════════════════════════════════════════════════ -->
+<div class="sec">
+<div class="lbl">Post 16 — Imagen única</div>
+<div class="desc">Pilar Entrenamiento con features detallados.</div>
+<div class="cap"><b>Caption:</b> "No necesitas un PT de $2,000 al mes. Necesitas un sistema que te guíe paso a paso."</div>
+<div class="car"><div class="sw">
+<div class="sl" id="p16"><div class="si ov-cream">
+  <div class="ib sw" onclick="swI(this)"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1772042621/workout_s1mccg.webp" crossorigin="anonymous"></div>
+  <div class="tx"></div><div class="atop"></div>
+  <div class="sc" style="justify-content:space-between;">
+    <div>
+      <div class="ey-dk" contenteditable="true">Pilar 02 · Entrenamiento</div>
+      <h2 class="h-dk-up" style="font-size:64px;margin-top:16px;" contenteditable="true">Cada ejercicio<br>tiene su <em>video.</em></h2>
+    </div>
+    <div>
+      <div class="dv"></div>
+      <div class="fl">
+        <div class="fi"><div class="fdot-dk"></div><div class="ftx-dk" contenteditable="true">Rutina completa por semana</div></div>
+        <div class="fi"><div class="fdot-dk"></div><div class="ftx-dk" contenteditable="true">Video con técnica paso a paso</div></div>
+        <div class="fi"><div class="fdot-dk"></div><div class="ftx-dk" contenteditable="true">Adaptable: gym, casa o 20 minutos</div></div>
+        <div class="fi"><div class="fdot-dk"></div><div class="ftx-dk" contenteditable="true">Progresión real, no rutinas random</div></div>
+      </div>
+      <div style="margin-top:24px;"><span class="btn-g" contenteditable="true">Tu entrenador en el bolsillo</span></div>
+    </div>
+  </div>
+  <div class="wm wm-g">Healthy Space Club</div>
+</div></div>
+<div class="brow">
+  <button class="db" onclick="dl('p16','post16-entreno-detalle')">⬇ Descargar PNG</button>
+  <button class="db db2" onclick="trS('p16')">📷 Cambiar foto</button>
+</div>
+</div></div></div>
+
+<!-- ══════════════════════════════════════════════════
+     POST 17 — PILAR MENTALIDAD DETALLADO
+══════════════════════════════════════════════════ -->
+<div class="sec">
+<div class="lbl">Post 17 — Imagen única</div>
+<div class="desc">Pilar Mentalidad con features. El que nadie más ofrece.</div>
+<div class="cap"><b>Caption:</b> "Nutrición y entrenamiento los consigues en cualquier lado. Mentalidad con sistema y estructura — solo aquí."</div>
+<div class="car"><div class="sw">
+<div class="sl" id="p17"><div class="si">
+  <div class="bg-f"></div>
+  <div class="tx"></div><div class="atop"></div><div class="gltl"></div>
+  <div class="bgn">03</div>
+  <div class="sc" style="justify-content:space-between;">
+    <div>
+      <div class="ey-g" contenteditable="true">Pilar 03 · Mentalidad</div>
+      <h2 class="h-w-up" style="font-size:64px;margin-top:16px;" contenteditable="true">El pilar que<br>nadie te<br><em>ofrece.</em></h2>
+    </div>
+    <div>
+      <div class="dv"></div>
+      <div class="fl">
+        <div class="fi"><div class="fdot"></div><div class="ftx" contenteditable="true">Módulos de hábitos y disciplina</div></div>
+        <div class="fi"><div class="fdot"></div><div class="ftx" contenteditable="true">Sistema de bienestar emocional</div></div>
+        <div class="fi"><div class="fdot"></div><div class="ftx" contenteditable="true">Mentalidad de crecimiento aplicada</div></div>
+        <div class="fi"><div class="fdot"></div><div class="ftx" contenteditable="true">Control de vida con Notion incluido</div></div>
+      </div>
+      <div style="margin-top:24px;"><span class="btn-g" contenteditable="true">Tu coach en el bolsillo</span></div>
+    </div>
+  </div>
+  <div class="wm">Healthy Space Club</div>
+</div></div>
+<div class="brow"><button class="db" onclick="dl('p17','post17-mentalidad-detalle')">⬇ Descargar PNG</button></div>
+</div></div></div>
+
+<!-- ══════════════════════════════════════════════════
+     POST 18 — CTA FINAL DIRECTO
+══════════════════════════════════════════════════ -->
+<div class="sec">
+<div class="lbl">Post 18 — Imagen única</div>
+<div class="desc">CTA directo con precio. El cierre de venta.</div>
+<div class="cap"><b>Caption:</b> "$29 al mes. Todo incluido. Sin contratos. El sistema que te faltaba. Link en bio."</div>
+<div class="car"><div class="sw">
+<div class="sl" id="p18"><div class="si ov-moss">
+  <div class="ib sw" onclick="swI(this)"><img src="https://res.cloudinary.com/dp9l5i19b/image/upload/v1772050428/hero_pghcvy.webp" crossorigin="anonymous"></div>
+  <div class="tx"></div><div class="gltl"></div><div class="glbr"></div>
+  <div class="frame"></div>
+  <div class="sc sc-c" style="justify-content:center;">
+    <div class="ey-g" contenteditable="true">Únete al Club</div>
+    <h2 class="h-w-up" style="font-size:76px;margin-top:20px;text-align:center;" contenteditable="true">El sistema<br>que te<br><em>faltaba.</em></h2>
+    <div class="dv dv-c"></div>
+    <p class="p p-w" contenteditable="true" style="text-align:center;max-width:700px;font-size:26px;">Nutrición · Entrenamiento · Mentalidad<br>Todo incluido. Sin contratos.</p>
+    <div style="margin-top:14px;font-size:22px;color:rgba(255,255,255,.2);">Desde <span style="color:#BFA065;font-weight:800;" contenteditable="true">$29/mes</span></div>
+    <div style="margin-top:28px;"><span class="btn-g" contenteditable="true">Comenzar ahora →</span></div>
+  </div>
+  <div class="wm">healthyspaceclub.com</div>
+</div></div>
+<div class="brow">
+  <button class="db" onclick="dl('p18','post18-cta-final')">⬇ Descargar PNG</button>
+  <button class="db db2" onclick="trS('p18')">📷 Cambiar foto</button>
+</div>
+</div></div></div>
+
 <script>
 async function dl(id,name){
   const el=document.getElementById(id),inner=el.querySelector('.si'),sw=el.closest('.sw'),btns=sw.querySelectorAll('.db');
@@ -555,9 +826,9 @@ async function dlSq(id,name){
   btns.forEach(b=>{b.dataset.o=b.textContent;b.textContent='⏳';b.disabled=true});
   inner.querySelectorAll('[contenteditable]').forEach(e=>e.blur());
   const ot=inner.style.transform,ow=el.style.width,oh=el.style.height,or=el.style.borderRadius;
-  inner.style.transform='none';el.style.width='1080px';el.style.height='1080px';el.style.overflow='hidden';el.style.borderRadius='0';
+  inner.style.transform='none';el.style.width='2160px';el.style.height='2160px';el.style.overflow='hidden';el.style.borderRadius='0';
   try{
-    const c=await html2canvas(inner,{width:1080,height:1080,scale:1,useCORS:true,allowTaint:true,backgroundColor:null,logging:false});
+    const c=await html2canvas(inner,{width:2160,height:2160,scale:1,useCORS:true,allowTaint:true,backgroundColor:null,logging:false});
     const a=document.createElement('a');a.download=name+'.png';a.href=c.toDataURL('image/png');a.click();
   }catch(e){console.error(e);alert('Error. Usa screenshot manual.');}
   inner.style.transform=ot;el.style.width=ow;el.style.height=oh;el.style.overflow='';el.style.borderRadius=or;
@@ -569,6 +840,18 @@ function swI(ib){
   inp.click();
 }
 function trS(id){const s=document.getElementById(id).querySelector('.ib.sw');if(s)swI(s);}
+
+// Mobile responsive scaling
+function scaleSl(){
+  if(window.innerWidth>460)return;
+  const w=window.innerWidth-24;
+  document.querySelectorAll('.si').forEach(s=>{s.style.transform='scale('+(w/1080)+')';});
+  document.querySelectorAll('.si-sq').forEach(s=>{s.style.transform='scale('+(w/2160)+')';});
+  document.querySelectorAll('.sl').forEach(s=>{s.style.width=w+'px';s.style.height=(w*1.25)+'px';});
+  document.querySelectorAll('.sl-sq').forEach(s=>{s.style.width=w+'px';s.style.height=w+'px';});
+}
+scaleSl();
+window.addEventListener('resize',scaleSl);
 </script>
 </body>
 </html>
